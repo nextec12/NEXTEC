@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Shop Nextec Clothing — everyday streetwear, made to stand out.">
+<title>NEXTEC Clothing — Official Store</title>
+<style>
+:root{--ink:#111;--muted:#686868;--paper:#f6f5f2;--lime:#d7ff3f;--line:#e4e2dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+button,input,select{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}
+.announcement{background:var(--lime);text-align:center;padding:10px 14px;font-size:11px;font-weight:900;letter-spacing:1.6px}
+header{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 5.5%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
+.logo{font-size:26px;font-weight:1000;letter-spacing:-1.7px}.logo span{color:#8aa600}
+nav{display:flex;gap:28px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.header-actions{display:flex;align-items:center;gap:16px}.icon-btn{border:0;background:none;font-weight:800;font-size:12px;padding:8px}
+.cart-count{background:var(--lime);border-radius:50%;padding:4px 7px;margin-left:4px}
+.hero{background:#171817;color:white;min-height:460px;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden}
+.hero-copy{padding:70px 8% 62px 11%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.eyebrow{font-size:11px;letter-spacing:3px;font-weight:900;color:var(--lime);text-transform:uppercase}
+h1{font-size:clamp(48px,7vw,88px);line-height:.88;letter-spacing:-5px;margin:22px 0;max-width:600px}
+.hero-copy p{max-width:370px;color:#c4c4c4;line-height:1.7;font-size:14px}
+.primary{background:var(--lime);color:#111;border:0;padding:16px 23px;font-size:11px;font-weight:1000;letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;margin-top:18px}
+.hero-art{position:relative;min-height:390px;background:radial-gradient(ellipse at 50% 35%,#4d5147 0%,#262923 32%,#171817 70%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.orbit{width:min(68%,370px);aspect-ratio:1;border:1px solid #666;border-radius:50%;position:absolute;transform:rotate(-20deg)}
+.orbit:before{content:"";position:absolute;inset:12%;border:1px solid #52564a;border-radius:50%}
+.shirt{width:235px;height:270px;position:relative;filter:drop-shadow(0 24px 20px #0008);z-index:1}
+.shirt:before{content:"";position:absolute;inset:30px 14px 0;background:linear-gradient(120deg,#30332e,#111310 50%,#242720);clip-path:polygon(24% 0,38% 9%,62% 9%,76% 0,100% 17%,82% 39%,72% 31%,78% 100%,22% 100%,28% 31%,18% 39%,0 17%);border:1px solid #51554b}
+.shirt:after{content:"NXT";position:absolute;top:94px;left:84px;font-size:26px;font-weight:1000;letter-spacing:-2px;color:var(--lime);transform:rotate(-4deg)}
+.art-tag{position:absolute;right:9%;bottom:11%;font-size:10px;letter-spacing:3px;color:#b5b7ac;writing-mode:vertical-rl}
+.ticker{background:var(--lime);padding:14px 0;overflow:hidden;white-space:nowrap;font-size:11px;font-weight:1000;letter-spacing:2px}
+.ticker span{padding:0 26px}
+section.shop{padding:70px 5.5% 85px;background:var(--paper)}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px;gap:20px}
+.kicker{font-size:10px;font-weight:900;letter-spacing:2px;color:#73736a;text-transform:uppercase}
+h2{font-size:clamp(32px,4vw,48px);letter-spacing:-2px;margin:8px 0 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #ccc;background:transparent;padding:10px 14px;font-size:10px;font-weight:900;letter-spacing:1px}.filter.active{background:#111;color:#fff;border-color:#111}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.product{min-width:0}.product-art{height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#e7e5de}
+.product-art .mini-shirt{width:155px;height:185px;position:relative;filter:drop-shadow(0 14px 10px #0002);transition:transform .25s}
+.product:hover .mini-shirt{transform:translateY(-5px) rotate(-2deg)}
+.mini-shirt:before{content:"";position:absolute;inset:18px 8px 0;background:var(--fabric,#191b18);clip-path:polygon(24% 0,38% 8%,62% 8%,76% 0,100% 16%,82% 37%,72% 30%,78% 100%,22% 100%,28% 30%,18% 37%,0 16%)}
+.mini-shirt:after{content:attr(data-mark);position:absolute;top:62px;left:0;right:0;text-align:center;color:var(--mark,var(--lime));font-size:17px;font-weight:1000;letter-spacing:-1px}
+.product:nth-child(2) .product-art{background:#d9dfd5}.product:nth-child(3) .product-art{background:#ded9d1}.product:nth-child(4) .product-art{background:#dedee2}
+.product:nth-child(2) .mini-shirt{--fabric:#e9e8df;--mark:#111}.product:nth-child(3) .mini-shirt{--fabric:#a9b6a1;--mark:#182018}.product:nth-child(4) .mini-shirt{--fabric:#dedee5;--mark:#181818}
+.tag{position:absolute;top:12px;left:12px;background:white;padding:7px 9px;font-size:9px;font-weight:1000;letter-spacing:1px}
+.product-info{padding:15px 2px;display:flex;justify-content:space-between;gap:10px}.product-name{font-size:13px;font-weight:900}.product-type{font-size:10px;color:var(--muted);margin-top:6px}.price{font-size:13px;font-weight:900;white-space:nowrap}
+.add{width:100%;border:1px solid #c8c6bf;background:transparent;padding:13px;font-size:10px;font-weight:1000;letter-spacing:1.3px}.add:hover{background:#111;color:#fff}
+.story{padding:72px 8%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.story-mark{min-height:260px;background:#171817;color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:clamp(70px,12vw,150px);font-weight:1000;letter-spacing:-10px}.story p{color:var(--muted);line-height:1.8;font-size:14px;max-width:430px}
+footer{background:#111;color:white;padding:35px 5.5%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}footer small{color:#aaa;font-size:11px}.footer-links{display:flex;gap:18px;font-size:11px;color:#ccc}
+.overlay{position:fixed;inset:0;background:#0008;z-index:10;display:none}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(460px,100%);background:#fff;padding:26px;overflow:auto;display:flex;flex-direction:column}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.drawer-head h3{margin:0;font-size:20px}.close{border:0;background:none;font-size:25px}
+.cart-items{flex:1}.empty{padding:40px 0;color:var(--muted);line-height:1.7}.cart-row{display:grid;grid-template-columns:65px 1fr auto;gap:13px;padding:18px 0;border-bottom:1px solid var(--line);align-items:center}.cart-thumb{height:70px;background:#e7e5de;display:grid;place-items:center;font-size:23px;font-weight:1000}.cart-row strong{font-size:12px}.cart-row small{display:block;color:var(--muted);margin-top:6px}.qty{display:flex;align-items:center;gap:9px;margin-top:8px}.qty button{width:23px;height:23px;border:1px solid #ccc;background:white}.cart-bottom{border-top:1px solid var(--line);padding-top:18px}.subtotal{display:flex;justify-content:space-between;font-weight:900}.fine{font-size:11px;color:var(--muted);line-height:1.6}
+.checkout-form{display:none;margin-top:20px}.checkout-form.show{display:block}.checkout-form h4{font-size:16px}.checkout-form label{display:block;font-size:10px;font-weight:900;letter-spacing:.7px;margin:13px 0 6px}.checkout-form input,.checkout-form select{width:100%;padding:12px;border:1px solid #ccc;background:#fff;border-radius:0}.checkout-form .primary{width:100%;justify-content:center}.notice{background:#f1f0e9;padding:12px;font-size:11px;line-height:1.6;color:#4d4d47;margin-top:15px}
+@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 8%}.hero-art{min-height:300px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product-art{height:230px}.section-head{align-items:flex-start;flex-direction:column}.story{grid-template-columns:1fr;gap:25px}}
+@media(max-width:420px){header{padding:0 4%;height:68px}.logo{font-size:23px}.header-actions{gap:4px}.hero h1{letter-spacing:-3px}.products{gap:10px}.product-art{height:190px}.mini-shirt{transform:scale(.82)}section.shop{padding:48px 4%}.story{padding:50px 5%}}
+</style>
+</head>
+<body>
+<div class="announcement">NEW DROP OUT NOW — FREE SHIPPING ON ORDERS OVER $100</div>
+<header>
+  <a class="logo" href="#">NEX<span>TEC</span></a>
+  <nav><a href="#shop">Shop all</a><a href="#story">Our story</a><a href="#footer">Contact</a></nav>
+  <div class="header-actions"><button class="icon-btn" onclick="openCart()">BAG <span class="cart-count" id="cartCount">0</span></button></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><div class="eyebrow">Nextec Clothing / New collection</div><h1>MADE TO<br>STAND OUT.</h1><p>Everyday essentials with a streetwear edge. Find your fit, make your mark, and move your way.</p><a class="primary" href="#shop">Shop the collection <span>↗</span></a></div>
+  <div class="hero-art"><div class="orbit"></div><div class="shirt"></div><div class="art-tag">NEXTEC — EST. YOUR YEAR</div></div>
+</section>
+<div class="ticker"><span>NEXTEC CLOTHING ✳ BUILT FOR EVERYDAY ✳ NEW DROP ✳</span><span>NEXTEC CLOTHING ✳ BUILT FOR EVERYDAY ✳ NEW DROP ✳</span></div>
+<section class="shop" id="shop">
+  <div class="section-head"><div><div class="kicker">The latest collection</div><h2>Shop the drop.</h2></div><div class="filters"><button class="filter active" onclick="filterProducts('All',this)">ALL</button><button class="filter" onclick="filterProducts('T-Shirts',this)">T-SHIRTS</button><button class="filter" onclick="filterProducts('Hoodies',this)">HOODIES</button><button class="filter" onclick="filterProducts('Accessories',this)">ACCESSORIES</button></div></div>
+  <div class="products" id="products"></div>
+</section>
+<section class="story" id="story"><div class="story-mark">NX.</div><div><div class="kicker">More than a label</div><h2>Wear your<br>own lane.</h2><p>NEXTEC is for people who show up as themselves. Clean essentials, confident design, and pieces you can make your own. This is your space to stand out.</p><a class="primary" href="#shop">Find your fit ↗</a></div></section>
+</main>
+<footer id="footer"><a class="logo" href="#">NEX<span>TEC</span></a><small>© 2026 NEXTEC CLOTHING. All rights reserved.</small><div class="footer-links"><a href="mailto:hello@nextec.example">Contact</a><a href="#shop">Shop</a><a href="#">Shipping & returns</a></div></footer>
+<div class="overlay" id="overlay" onclick="outsideClose(event)"><aside class="drawer"><div class="drawer-head"><h3>Your bag (<span id="drawerCount">0</span>)</h3><button class="close" onclick="closeCart()" aria-label="Close bag">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-bottom"><div class="subtotal"><span>Subtotal</span><span id="subtotal">$0.00</span></div><p class="fine">Shipping and taxes are calculated at checkout.</p><button class="primary" style="width:100%;justify-content:center" onclick="showCheckout()">Continue to checkout →</button><div class="notice">Demo store: card payments are not connected yet. Do not enter real payment details. Connect a secure provider such as Shopify Payments or Stripe before accepting orders.</div>
+<div class="checkout-form" id="checkoutForm"><h4>Delivery details</h4><form onsubmit="demoOrder(event)"><label for="email">EMAIL</label><input id="email" type="email" required placeholder="you@example.com"><label for="fullname">FULL NAME</label><input id="fullname" required placeholder="Your full name"><label for="address">SHIPPING ADDRESS</label><input id="address" required placeholder="Street address"><label for="city">CITY</label><input id="city" required placeholder="City"><label for="state">STATE</label><input id="state" required placeholder="State"><label for="zip">ZIP CODE</label><input id="zip" required placeholder="ZIP code"><button class="primary" type="submit">Review demo order →</button></form><p class="fine">This preview only tests the shopping flow. It will not charge a card or submit an order.</p></div>
+</div></aside></div>
+<script>
+const products=[
+{id:1,name:"NXT Core Tee",type:"T-Shirts",price:28,tag:"BESTSELLER",mark:"NXT",color:"#191b18"},
+{id:2,name:"Essential Logo Tee",type:"T-Shirts",price:30,tag:"NEW",mark:"NEXTEC",color:"#e9e8df"},
+{id:3,name:"Everyday Hoodie",type:"Hoodies",price:58,tag:"POPULAR",mark:"NX.",color:"#a9b6a1"},
+{id:4,name:"Minimal Crew Tee",type:"T-Shirts",price:26,tag:"",mark:"N.",color:"#dedee5"},
+{id:5,name:"NXT Heavy Hoodie",type:"Hoodies",price:68,tag:"NEW DROP",mark:"NXT",color:"#343633"},
+{id:6,name:"Nextec Cap",type:"Accessories",price:24,tag:"",mark:"NX",color:"#252622"},
+{id:7,name:"Streetwear Tote",type:"Accessories",price:18,tag:"",mark:"NEX",color:"#d6cbb9"},
+{id:8,name:"Oversized Tee",type:"T-Shirts",price:34,tag:"",mark:"NEXTEC",color:"#6c7d8b"}
+];
+let cart={};
+function money(n){return '$'+n.toFixed(2)}
+function renderProducts(filter='All'){
+ const shown=products.filter(p=>filter==='All'||p.type===filter);
+ document.getElementById('products').innerHTML=shown.map(p=>`<article class="product"><div class="product-art">${p.tag?`<span class="tag">${p.tag}</span>`:''}<div class="mini-shirt" style="--fabric:${p.color};--mark:${p.color==='#e9e8df'||p.color==='#dedee5'||p.color==='#d6cbb9'?'#171817':'#d7ff3f'}" data-mark="${p.mark}"></div></div><div class="product-info"><div><div class="product-name">${p.name}</div><div class="product-type">${p.type}</div></div><div class="price">${money(p.price)}</div></div><button class="add" onclick="addToCart(${p.id})">ADD TO BAG +</button></article>`).join('');
+}
+function filterProducts(f,btn){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderProducts(f)}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart();openCart()}
+function updateCart(){
+ let count=Object.values(cart).reduce((a,b)=>a+b,0),sum=0;
+ document.getElementById('cartCount').textContent=count;document.getElementById('drawerCount').textContent=count;
+ const rows=Object.entries(cart).filter(([id,q])=>q>0).map(([id,q])=>{let p=products.find(x=>x.id===+id);sum+=p.price*q;return `<div class="cart-row"><div class="cart-thumb">NX</div><div><strong>${p.name}</strong><small>${money(p.price)} each</small><div class="qty"><button onclick="changeQty(${id},-1)">−</button><span>${q}</span><button onclick="changeQty(${id},1)">+</button></div></div><strong>${money(p.price*q)}</strong></div>`}).join('');
+ document.getElementById('cartItems').innerHTML=rows||'<div class="empty">Your bag is empty.<br>Add a few pieces from the collection.</div>';
+ document.getElementById('subtotal').textContent=money(sum);
+}
+function changeQty(id,n){cart[id]=(cart[id]||0)+n;if(cart[id]<=0)delete cart[id];updateCart()}
+function openCart(){document.getElementById('overlay').classList.add('show')}
+function closeCart(){document.getElementById('overlay').classList.remove('show')}
+function outsideClose(e){if(e.target.id==='overlay')closeCart()}
+function showCheckout(){if(!Object.keys(cart).length){alert('Your bag is empty. Add an item first.');return}document.getElementById('checkoutForm').classList.add('show');document.getElementById('checkoutForm').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function demoOrder(e){e.preventDefault();alert('Demo only — no order was placed and no payment was taken. To launch your store, connect a secure checkout provider.');}
+renderProducts();updateCart();
+</script>
+</body>
+</html>
